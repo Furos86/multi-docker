@@ -3,18 +3,18 @@ services:
   - docker
 
 before_install:
-  - docker build -t react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t yannick3dimerce/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run react-test npm test -- --coverage
+  - docker run yannick3dimerce/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t multi-client ./client
-  - docker build -t multi-nginx ./nginx
-  - docker build -t muli-server ./server
-  - docker build -t multi- worker ./worker
+  - docker build -t yannick3dimerce/multi-client ./client
+  - docker build -t yannick3dimerce/multi-nginx ./nginx
+  - docker build -t yannick3dimerce/muli-server ./server
+  - docker build -t yannick3dimerce/multi- worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
-  - docker push multi-client
-  - docker push multi-nginx
-  - docker push muli-server
-  - docker push multi- worker
+  - docker push yannick3dimerce/multi-client
+  - docker push yannick3dimerce/multi-nginx
+  - docker push yannick3dimerce/muli-server
+  - docker push yannick3dimerce/multi- worker
