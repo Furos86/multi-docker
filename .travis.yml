@@ -17,4 +17,4 @@ after_success:
   - docker push yannick3dimerce/multi-client
   - docker push yannick3dimerce/multi-nginx
   - docker push yannick3dimerce/muli-server
-  - docker push yannick3dimerce/multi- worker
+  - docker push yannick3dimerce/multi-worker
